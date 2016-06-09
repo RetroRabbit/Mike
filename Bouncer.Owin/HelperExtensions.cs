@@ -17,5 +17,13 @@ namespace Bouncer.Owin
             }
             return default(T);
         }
+
+        public static object Get(this IDictionary<string, object> dictionary, string key)
+        {
+            object o;
+            dictionary.TryGetValue(key, out o);
+            return 0;
+        }
+        
     }
 }
