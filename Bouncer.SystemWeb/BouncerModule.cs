@@ -29,10 +29,11 @@ namespace Bouncer.SystemWeb
 
         public void Init(HttpApplication application)
         {
-            application.BeginRequest += Application_BeginRequest;
+            EventHandlerTaskAsyncHelper asyncBeginRequest = new EventHandlerTaskAsyncHelper(Application_BeginRequest);
+            application.AddOnBeginRequestAsync(asyncBeginRequest.BeginEventHandler, asyncBeginRequest.EndEventHandler);
         }
 
-        private async void Application_BeginRequest(object sender, EventArgs e)
+        private async Task Application_BeginRequest(object sender, EventArgs e)
         {
             var context = ((HttpApplication)sender).Context;
             var request = ((HttpApplication)sender).Request;
