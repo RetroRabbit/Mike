@@ -64,6 +64,24 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bouncer.Owin\Bouncer.Owin.csproj">
+      <Project>{73051c62-0e82-471f-93cd-34657cd4168e}</Project>
+      <Name>Bouncer.Owin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bouncer.SystemWebTestHost\Bouncer.SystemWebTestHost.csproj">
+      <Project>{68e4ab6e-7fd5-484e-8df4-fb8e0dc770ba}</Project>
+      <Name>Bouncer.SystemWebTestHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bouncer.SystemWeb\Bouncer.SystemWeb.csproj">
+      <Project>{d54d16b0-1780-4789-a4df-73f6add86943}</Project>
+      <Name>Bouncer.SystemWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bouncer\Bouncer.csproj">
+      <Project>{fed185be-32cf-4cb9-bdc6-30d8900b734c}</Project>
+      <Name>Bouncer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
