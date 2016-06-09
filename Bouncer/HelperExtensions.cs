@@ -10,7 +10,9 @@ namespace Bouncer
     {
         public static string GetHeader(this IRequestContext request, string header)
         {
-            return request.Headers?[header]?.FirstOrDefault();
+            string[] values = null;
+            request.Headers?.TryGetValue(header, out values);
+            return values?.FirstOrDefault();
         }
     }
 }
