@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Bouncer
@@ -29,20 +30,64 @@ namespace Bouncer
         {
             var report = new Report();
 
-            string ipAddress;
+            string ipAddress = request.RemoteIpAddress;
             string forwardedFor = request.GetHeader("X-Forwarded-For");
-            if (!string.IsNullOrEmpty(forwardedFor) && forwardedFor != request.RemoteIpAddress)
+            
+            if(!string.IsNullOrEmpty(forwardedFor))
             {
-                ipAddress = forwardedFor;
-                report.RemoteAddressRewriteAdvised = true;
-            }
-            else
-            {
-                ipAddress = request.RemoteIpAddress;
+                bool recognizedProxyAddress = IsRecognizedReverseProxyAddress(ipAddress);
+                forwardedFor = RewriteForwardedAddress(forwardedFor, ipAddress, recognizedProxyAddress);
+                if(!string.IsNullOrEmpty(forwardedFor) && ipAddress != forwardedFor)
+                {
+                    ipAddress = forwardedFor;
+                    report.RemoteAddressRewriteAdvised = true;
+                }
+
+                report.ForwardedIpAddressWasRecognizedProxy = recognizedProxyAddress;
             }
 
-            report.RealRemoteAddress = ipAddress;
+            report.OriginalRemoteAddress = request.RemoteIpAddress;
+            report.RemoteAddress = ipAddress;
             return report;
+        }
+
+        /// <summary>
+        /// Rewrites the request IP address if a forwarded address is provided. By default this
+        /// will return the forwarded IP address the original address is private or
+        /// <paramref name="isRecognizedReverseProxyAddress"/> is true, and the forwarded address
+        /// is not a private IP address. The address returned here will be set on
+        /// <see cref="Report.RemoteAddress"/> for consideration to rewrite by
+        /// <see cref="TakeActionBasedOnReportAsync"/>.
+        /// </summary>
+        /// <param name="forwardedAddress">The value of the forwarded address. Typically the value of the X-Forwarded-For header.</param>
+        /// <param name="originalAddress">The original remote IP address of the connecting client.</param>
+        /// <param name="isRecognizedReverseProxyAddress"><c>true</c> if <paramref name="originalAddress"/> was detected to be a recognized reverse proxy server IP address.</param>
+        /// <returns>The Ip Address to use for the request.</returns>
+        protected virtual string RewriteForwardedAddress(string forwardedAddress, string originalAddress, bool isRecognizedReverseProxyAddress)
+        {
+            bool originalAcceptable = IsLocalAddress(originalAddress) || isRecognizedReverseProxyAddress;
+            bool forwardedAcceptable = !IsLocalAddress(forwardedAddress);
+
+            if (originalAcceptable && forwardedAcceptable) return forwardedAddress;
+            else return originalAddress;
+        }
+
+        /// <summary>
+        /// When overriden in a derived class should return <c>true</c> if
+        /// <paramref name="originalAddress"/> is a recognized reverse proxy server.
+        /// </summary>
+        /// <param name="originalAddress">The address of the connecting client.</param>
+        /// <returns><c>true</c> if <paramref name="originalAddress"/> is a recognized reverse proxy server IP address.</returns>
+        protected virtual bool IsRecognizedReverseProxyAddress(string originalAddress)
+        {
+            //TODO: find a way for this to work nicely
+            return false;
+        }
+
+        private bool IsLocalAddress(string originalAddress)
+        {
+            //from http://stackoverflow.com/a/11327345
+            return Regex.IsMatch(originalAddress, @"/(^127\.)|(^192\.168\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^::1$)|(^[fF][cCdD])/");
         }
 
         /// <summary>
@@ -62,7 +107,7 @@ namespace Bouncer
         {
             if (report.RemoteAddressRewriteAdvised && !Configuration.DontAllowRewriteOfRemoteIpAddress)
             {
-                platform.RewriteRemoteIpAddress(report.RealRemoteAddress);
+                platform.RewriteRemoteIpAddress(report.RemoteAddress);
             }
 
             IntrusionAction actionToTake = IntrusionAction.None;
