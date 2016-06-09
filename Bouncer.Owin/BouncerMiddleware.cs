@@ -25,7 +25,7 @@ namespace Bouncer.Owin
             var report = _bouncer.Analyze(request);
             if (report.ActionRequired)
             {
-                bool mustStillInvokeNext = await _bouncer.ActionOnReportAsync(report, new OwinPlatform(environment));
+                bool mustStillInvokeNext = await _bouncer.TakeActionBasedOnReportAsync(report, new OwinPlatform(environment));
                 if(mustStillInvokeNext)
                 {
                     await _next(environment);

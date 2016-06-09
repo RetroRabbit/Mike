@@ -47,7 +47,7 @@ namespace Bouncer
 
         /// <summary>
         /// Takes any actions recommended by a report. Returns a <see cref="bool"/> indicating
-        /// whether or not the request may still be handled by downstream middleware. When <see cref="ActionOnReportAsync(Report, Bouncer.IPlatform)"/>
+        /// whether or not the request may still be handled by downstream middleware. When <see cref="TakeActionBasedOnReportAsync(Report, Bouncer.IPlatform)"/>
         /// returns <c>false</c>, the request must end after the call. If it returns <c>true</c>
         /// the request must be handed to downstream middleware.
         /// </summary>
@@ -58,7 +58,7 @@ namespace Bouncer
         /// if the response has already been sent to the client and downstream middleware cannot
         /// handle the request anymore.
         /// </returns>
-        public async Task<bool> ActionOnReportAsync(Report report, IPlatform platform)
+        public async Task<bool> TakeActionBasedOnReportAsync(Report report, IPlatform platform)
         {
             if (report.RemoteAddressRewriteAdvised && !Configuration.DontAllowRewriteOfRemoteIpAddress)
             {
