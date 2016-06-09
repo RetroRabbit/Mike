@@ -60,29 +60,47 @@ namespace Bouncer
         /// </returns>
         public async Task<bool> ActionOnReportAsync(Report report, IPlatform platform)
         {
-            if (report.RemoteAddressRewriteAdvised)
+            if (report.RemoteAddressRewriteAdvised && !Configuration.DontAllowRewriteOfRemoteIpAddress)
             {
                 platform.RewriteRemoteIpAddress(report.RealRemoteAddress);
             }
 
-            if (report.ChallengeAdvised)
+            IntrusionAction actionToTake = IntrusionAction.None;
+            if (report.IntrusionDetected)
             {
-                return await SendChallengeResponseAsync(report, platform);
-            }
-            else if (report.ThrottlingAdvised)
-            {
-                return await ThrottleAsync(report, platform);
+                if(report.IsXhr)
+                {
+                    actionToTake = Configuration.ActionWhenIntrusionDetectedXhr;
+                }
+                else
+                {
+                    actionToTake = Configuration.ActionWhenIntrusionDetected;
+                }
             }
 
-            return true;
+            if (actionToTake == IntrusionAction.None && report.RateLimitReached)
+            {
+                if (report.IsXhr)
+                {
+                    actionToTake = Configuration.ActionWhenRateLimitReachedXhr;
+                }
+                else
+                {
+                    actionToTake = Configuration.ActionWhenRateLimitReached;
+                }
+            }
+
+            if (actionToTake == IntrusionAction.None)
+            {
+                return true;
+            }
+            else
+            {
+                return await TakeActionAsync(report, actionToTake, platform);
+            }
         }
 
-        private Task<bool> ThrottleAsync(Report report, IPlatform platform)
-        {
-            throw new NotImplementedException();
-        }
-
-        private Task<bool> SendChallengeResponseAsync(Report report, IPlatform platform)
+        private Task<bool> TakeActionAsync(Report report, IntrusionAction actionToTake, IPlatform platform)
         {
             throw new NotImplementedException();
         }
