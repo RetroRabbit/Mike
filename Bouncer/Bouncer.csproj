@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BouncerManager.cs" />
     <Compile Include="BouncerConfiguration.cs" />
     <Compile Include="HelperExtensions.cs" />
     <Compile Include="IPlatform.cs" />
