@@ -31,13 +31,11 @@ namespace Bouncer.Owin
             throw new NotImplementedException();
         }
         
-        private static void SetNewRemoteIpAddressForHttpContext(string newAddress, object httpcontext)
+        private static void SetNewRemoteIpAddressForHttpContext(string newAddress, object context)
         {
             try
             {
                 //TODO: this is slow
-                var context = httpcontext.GetType().GetProperty("Current")?.GetValue(null);
-
                 if (context != null)
                 {
                     var request = context.GetType().GetProperty("Request")?.GetValue(context);
