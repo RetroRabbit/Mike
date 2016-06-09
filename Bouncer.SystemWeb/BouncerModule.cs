@@ -32,12 +32,35 @@ namespace Bouncer.SystemWeb
             application.BeginRequest += Application_BeginRequest;
         }
 
-        private void Application_BeginRequest(object sender, EventArgs e)
+        private async void Application_BeginRequest(object sender, EventArgs e)
         {
+            var context = ((HttpApplication)sender).Context;
+            var request = ((HttpApplication)sender).Request;
+            var response = ((HttpApplication)sender).Response;
+
             var bouncer = _bouncer;
-            if(bouncer != null)
+            if (bouncer != null)
             {
-                //TODO:stuff
+                IRequestContext requestcontext = new SystemWebRequest(request);
+                var report = bouncer.Analyze(requestcontext);
+                if (report.ActionRequired)
+                {
+                    IPlatform platform = new SystemWebPlatform(context);
+                    bool canContinue = await bouncer.TakeActionBasedOnReportAsync(report, platform);
+                    if (!canContinue)
+                    {
+                        if (response.SupportsAsyncFlush)
+                        {
+                            await Task.Factory.FromAsync(response.BeginFlush, response.EndFlush, null);
+                        }
+                        else
+                        {
+                            response.Flush();
+                        }
+
+                        response.End();
+                    }
+                }
             }
         }
     }
