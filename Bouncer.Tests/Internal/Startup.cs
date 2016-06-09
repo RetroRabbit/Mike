@@ -18,6 +18,17 @@ namespace Bouncer.Tests.Internal
             app.UseErrorPage();
             app.UseBouncer(BouncerManager ?? new BouncerManager());
             app.UseWelcomePage("/");
+            app.Use(async (ctx, next) =>
+            {
+                if(ctx.Request.Path.Value == "/ipaddress")
+                {
+                    await ctx.Response.WriteAsync(ctx.Request.RemoteIpAddress);
+                }
+                else
+                {
+                    await next();
+                }
+            });
             AdditionalMiddleware.ForEach(mw => app.Use(mw));
         }
     }
