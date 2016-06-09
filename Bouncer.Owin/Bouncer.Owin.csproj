@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HelperExtensions.cs" />
+    <Compile Include="OwinPlatform.cs" />
     <Compile Include="OwinRequestContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
