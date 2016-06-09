@@ -22,7 +22,7 @@ namespace Bouncer.Owin
         {
             object o;
             dictionary.TryGetValue(key, out o);
-            return 0;
+            return o;
         }
         
     }
