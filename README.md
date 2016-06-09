@@ -24,7 +24,7 @@ Coming someday! In the meantime [do this](https://docs.asp.net/en/latest/fundame
 <system.webServer>
 	<modules>
 	    ...
-		<add name="Bouncer" type="Bouncer.SystemWeb.BouncerModule, Version=1.0.0.0" />
+		<add name="Bouncer" type="Bouncer.SystemWeb.BouncerModule, Bouncer.SystemWeb, Version=1.0.0.0"/>
 		...
 	</modules>
 </system.webServer>
