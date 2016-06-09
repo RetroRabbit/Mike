@@ -19,7 +19,7 @@ namespace Bouncer.Owin
         {
             _environment["server.RemoteIpAddress"] = newAddress;
 
-            object httpcontext = _environment["System.Web.HttpContextBase"];
+            object httpcontext = _environment.Get("System.Web.HttpContextBase");
             if (httpcontext != null)
             {
                 SetNewRemoteIpAddressForHttpContext(newAddress, httpcontext);
