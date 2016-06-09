@@ -69,6 +69,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -89,12 +90,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bouncer.SystemWeb\Bouncer.SystemWeb.csproj">
       <Project>{d54d16b0-1780-4789-a4df-73f6add86943}</Project>
       <Name>Bouncer.SystemWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bouncer\Bouncer.csproj">
+      <Project>{fed185be-32cf-4cb9-bdc6-30d8900b734c}</Project>
+      <Name>Bouncer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

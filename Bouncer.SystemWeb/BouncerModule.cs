@@ -9,6 +9,19 @@ namespace Bouncer.SystemWeb
 {
     public class BouncerModule : IHttpModule
     {
+        private static BouncerManager _bouncer;
+
+        static BouncerModule()
+        {
+            _bouncer = new BouncerManager();
+        }
+
+        public static BouncerManager BouncerManager
+        {
+            get { return _bouncer; }
+            set { _bouncer = value; }
+        }
+
         public void Dispose()
         {
             throw new NotImplementedException();
@@ -21,6 +34,11 @@ namespace Bouncer.SystemWeb
 
         private void Application_BeginRequest(object sender, EventArgs e)
         {
+            var bouncer = _bouncer;
+            if(bouncer != null)
+            {
+                //TODO:stuff
+            }
         }
     }
 }
