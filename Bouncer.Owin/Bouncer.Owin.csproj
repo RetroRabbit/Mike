@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BouncerExtensions.cs" />
+    <Compile Include="BouncerMiddleware.cs" />
     <Compile Include="HelperExtensions.cs" />
     <Compile Include="OwinPlatform.cs" />
     <Compile Include="OwinRequestContext.cs" />
