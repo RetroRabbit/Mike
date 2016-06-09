@@ -43,6 +43,7 @@
     <Compile Include="BouncerManager.cs" />
     <Compile Include="BouncerConfiguration.cs" />
     <Compile Include="HelperExtensions.cs" />
+    <Compile Include="IntrusionAction.cs" />
     <Compile Include="IPlatform.cs" />
     <Compile Include="IResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
