@@ -2,13 +2,23 @@
 
 Drop in intrusion detection and prevention for ASP.Net based web applications.
 
+Features:
+- [ ] Transparent and efficient intrusion detection
+- [ ] Intrusion prevention via captcha challenge
+- [ ] Throttling of high volume of requests from single IP Address
+- [x] Load balancer IP Address forwarding and rewriting
+- [ ] Low overhead
+- [ ] Support for clustered environments
+- [ ] Fluent configuration
+- [ ] State storage and caching in Redis
+
 # Installation
 
 Someday nuget will be available...
 
 # Usage
 
-## OWIN
+### OWIN
 ```C#
 public void Configuration(IAppBuilder app)
 {
@@ -16,10 +26,10 @@ public void Configuration(IAppBuilder app)
 }
 ```
 
-## ASP.Net 5
+### ASP.Net 5
 Coming someday! In the meantime [do this](https://docs.asp.net/en/latest/fundamentals/owin.html).
 
-## System.Web
+### System.Web
 ```XML
 <system.webServer>
 	<modules>
@@ -32,7 +42,7 @@ Coming someday! In the meantime [do this](https://docs.asp.net/en/latest/fundame
 
 # Configuration
 
-## OWIN & ASP.Net 5 (someday)
+### OWIN & ASP.Net 5 (someday)
 ```C#
 public void Configuration(IAppBuilder app)
 {
@@ -45,7 +55,7 @@ public void Configuration(IAppBuilder app)
 }
 ```
 
-## System.Web
+### System.Web
 ```C#
 using Bouncer.SystemWeb;
 
@@ -62,7 +72,7 @@ public class Global : HttpApplication
 ```
 
 
-# Customazation
+# Customization
 
 Somewhere...
 
@@ -73,7 +83,7 @@ public class MyBouncer: BouncerManager
 }
 ```
 
-## OWIN & ASP.Net 5 (someday)
+### OWIN & ASP.Net 5 (someday)
 ```C#
 public void Configuration(IAppBuilder app)
 {
@@ -83,7 +93,7 @@ public void Configuration(IAppBuilder app)
 }
 ```
 
-## System.Web
+### System.Web
 ```C#
 using Bouncer.SystemWeb;
 
