@@ -1,4 +1,4 @@
-# Bouncer
+# ~~Bouncer~~ Mike
 
 Drop in intrusion detection and prevention for ASP.Net based web applications.
 
@@ -11,6 +11,11 @@ Features:
 - [ ] Support for clustered environments
 - [ ] Fluent configuration
 - [ ] State storage and caching in Redis
+- [ ] Rename to Mike
+- [ ] MyGet continuous integration
+- [ ] ASP.Net Core
+- [ ] Fluent configuration
+- [ ] Extensibility
 
 # Installation
 
@@ -26,7 +31,7 @@ public void Configuration(IAppBuilder app)
 }
 ```
 
-### ASP.Net 5
+### ASP.Net Core
 Coming someday! In the meantime [do this](https://docs.asp.net/en/latest/fundamentals/owin.html).
 
 ### System.Web
@@ -83,7 +88,7 @@ public class MyBouncer: BouncerManager
 }
 ```
 
-### OWIN & ASP.Net 5 (someday)
+### OWIN & ASP.Net Core (someday)
 ```C#
 public void Configuration(IAppBuilder app)
 {
