@@ -1,6 +1,6 @@
 # ~~Bouncer~~ Mike
 
-Drop in intrusion detection and prevention for ASP.Net based web applications.
+Drop in intrusion detection and prevention for .Net based web applications.
 
 Features:
 - [ ] Transparent and efficient intrusion detection
