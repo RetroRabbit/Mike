@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Bouncer.SystemWebTestHost.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Mike.SystemWebTestHost.Global" Language="C#" %>

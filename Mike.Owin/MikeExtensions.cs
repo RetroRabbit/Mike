@@ -10,17 +10,17 @@ namespace Owin
 {
     public static class MikeExtensions
     {
-        public static IAppBuilder UseBouncer(this IAppBuilder app)
+        public static IAppBuilder UseMike(this IAppBuilder app)
         {
-            return app.UseBouncer(new MikeIds());
+            return app.UseMike(new MikeIds());
         }
 
-        public static IAppBuilder UseBouncer(this IAppBuilder app, MikeConfiguration configuration)
+        public static IAppBuilder UseMike(this IAppBuilder app, MikeConfiguration configuration)
         {
-            return app.UseBouncer(new MikeIds(configuration));
+            return app.UseMike(new MikeIds(configuration));
         }
 
-        public static IAppBuilder UseBouncer(this IAppBuilder app, MikeIds bouncer)
+        public static IAppBuilder UseMike(this IAppBuilder app, MikeIds bouncer)
         {
             app.Use(typeof(MikeMiddleware), bouncer);
 

@@ -16,7 +16,7 @@ namespace Mike.Tests.Internal
         public void Configuration(IAppBuilder app)
         {
             app.UseErrorPage();
-            app.UseBouncer(Mike ?? new MikeIds());
+            app.UseMike(Mike ?? new MikeIds());
             app.UseWelcomePage("/");
             app.Use(async (ctx, next) =>
             {

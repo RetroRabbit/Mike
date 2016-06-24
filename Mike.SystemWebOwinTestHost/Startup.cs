@@ -11,7 +11,7 @@ namespace Mike.SystemWebOwinTestHost
     {
         public void Configuration(IAppBuilder app)
         {
-            app.UseBouncer();
+            app.UseMike();
         }
     }
 }

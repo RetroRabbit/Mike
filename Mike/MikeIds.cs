@@ -92,12 +92,12 @@ namespace Mike
 
         /// <summary>
         /// Takes any actions recommended by a report. Returns a <see cref="bool"/> indicating
-        /// whether or not the request may still be handled by downstream middleware. When <see cref="TakeActionBasedOnReportAsync(Report, Bouncer.IPlatform)"/>
+        /// whether or not the request may still be handled by downstream middleware. When <see cref="TakeActionBasedOnReportAsync(Report, Mike.IPlatform)"/>
         /// returns <c>false</c>, the request must end after the call. If it returns <c>true</c>
         /// the request must be handed to downstream middleware.
         /// </summary>
         /// <param name="report">The report to action on.</param>
-        /// <param name="platform">A platform providing Bouncer a way to interact with the hosting environment.</param>
+        /// <param name="platform">A platform providing Mike a way to interact with the hosting environment.</param>
         /// <returns>
         /// <c>true</c> if downstream middleware must still handle the request, or <c>false</c>
         /// if the response has already been sent to the client and downstream middleware cannot

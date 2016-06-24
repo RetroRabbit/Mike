@@ -1,4 +1,4 @@
-# ~~Bouncer~~ Mike
+# Mike
 
 Drop in intrusion detection and prevention for .Net based web applications.
 
@@ -27,7 +27,7 @@ Someday nuget will be available...
 ```C#
 public void Configuration(IAppBuilder app)
 {
-    app.UseBouncer();
+    app.UseMike();
 }
 ```
 
@@ -39,7 +39,7 @@ Coming someday! In the meantime [do this](https://docs.asp.net/en/latest/fundame
 <system.webServer>
 	<modules>
 	    ...
-		<add name="Bouncer" type="Bouncer.SystemWeb.BouncerModule, Bouncer.SystemWeb, Version=1.0.0.0"/>
+		<add name="Mike" type="Mike.SystemWeb.MikeModule, Mike.SystemWeb, Version=1.0.0.0"/>
 		...
 	</modules>
 </system.webServer>
@@ -51,24 +51,24 @@ Coming someday! In the meantime [do this](https://docs.asp.net/en/latest/fundame
 ```C#
 public void Configuration(IAppBuilder app)
 {
-    var config = new BouncerConfiguration()
+    var config = new MikeConfiguration()
 	{
 		...
 	};
 
-    app.UseBouncer(config);
+    app.UseMike(config);
 }
 ```
 
 ### System.Web
 ```C#
-using Bouncer.SystemWeb;
+using Mike.SystemWeb;
 
 public class Global : HttpApplication
 {
     protected void Application_Start(object sender, EventArgs e)
     {
-        BouncerModule.BouncerManager.Configuration = new BouncerConfiguration
+        MikeModule.MikeIds.Configuration = new MikeConfiguration
         {
 			...
         };
@@ -82,7 +82,7 @@ public class Global : HttpApplication
 Somewhere...
 
 ```C#
-public class MyBouncer: BouncerManager
+public class MyMike: MikeIds
 {
 	...
 }
@@ -92,21 +92,21 @@ public class MyBouncer: BouncerManager
 ```C#
 public void Configuration(IAppBuilder app)
 {
-    var bouncer = new MyBouncer();
+    var Mike = new MyMike();
 
-    app.UseBouncer(bouncer);
+    app.UseMike(Mike);
 }
 ```
 
 ### System.Web
 ```C#
-using Bouncer.SystemWeb;
+using Mike.SystemWeb;
 
 public class Global : HttpApplication
 {
     protected void Application_Start(object sender, EventArgs e)
     {
-        BouncerModule.BouncerManager = new MyBouncer(); 
+        MikeModule.MikeIds = new MyMike(); 
     }
 }
 ```

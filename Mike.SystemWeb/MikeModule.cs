@@ -9,17 +9,17 @@ namespace Mike.SystemWeb
 {
     public class MikeModule : IHttpModule
     {
-        private static MikeIds _bouncer;
+        private static MikeIds _mike;
 
         static MikeModule()
         {
-            _bouncer = new MikeIds();
+            _mike = new MikeIds();
         }
 
-        public static MikeIds BouncerManager
+        public static MikeIds Mike
         {
-            get { return _bouncer; }
-            set { _bouncer = value; }
+            get { return _mike; }
+            set { _mike = value; }
         }
 
         public void Dispose()
@@ -39,15 +39,15 @@ namespace Mike.SystemWeb
             var request = ((HttpApplication)sender).Request;
             var response = ((HttpApplication)sender).Response;
 
-            var bouncer = _bouncer;
-            if (bouncer != null)
+            var mike = _mike;
+            if (mike != null)
             {
                 IRequestContext requestcontext = new SystemWebRequest(request);
-                var report = bouncer.Analyze(requestcontext);
+                var report = mike.Analyze(requestcontext);
                 if (report.ActionRequired)
                 {
                     IPlatform platform = new SystemWebPlatform(context);
-                    bool canContinue = await bouncer.TakeActionBasedOnReportAsync(report, platform);
+                    bool canContinue = await mike.TakeActionBasedOnReportAsync(report, platform);
                     if (!canContinue)
                     {
                         if (response.SupportsAsyncFlush)
