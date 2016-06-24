@@ -11,12 +11,12 @@ namespace Bouncer.Tests.Internal
     internal class Startup
     {
         public static List<AppFunc> AdditionalMiddleware { get; } = new List<AppFunc>();
-        public static Mike Mike { get; set; }
+        public static MikeIds Mike { get; set; }
 
         public void Configuration(IAppBuilder app)
         {
             app.UseErrorPage();
-            app.UseBouncer(Mike ?? new Mike());
+            app.UseBouncer(Mike ?? new MikeIds());
             app.UseWelcomePage("/");
             app.Use(async (ctx, next) =>
             {

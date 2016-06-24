@@ -12,15 +12,15 @@ namespace Owin
     {
         public static IAppBuilder UseBouncer(this IAppBuilder app)
         {
-            return app.UseBouncer(new Mike());
+            return app.UseBouncer(new MikeIds());
         }
 
         public static IAppBuilder UseBouncer(this IAppBuilder app, MikeConfiguration configuration)
         {
-            return app.UseBouncer(new Mike(configuration));
+            return app.UseBouncer(new MikeIds(configuration));
         }
 
-        public static IAppBuilder UseBouncer(this IAppBuilder app, Mike bouncer)
+        public static IAppBuilder UseBouncer(this IAppBuilder app, MikeIds bouncer)
         {
             app.Use(typeof(MikeMiddleware), bouncer);
 

@@ -10,10 +10,10 @@ namespace Bouncer.Owin
 
     internal class MikeMiddleware
     {
-        private Mike _bouncer;
+        private MikeIds _bouncer;
         private Func<IDictionary<string, object>, Task> _next;
 
-        public MikeMiddleware(AppFunc next, Mike bouncer)
+        public MikeMiddleware(AppFunc next, MikeIds bouncer)
         {
             _bouncer = bouncer;
             _next = next;

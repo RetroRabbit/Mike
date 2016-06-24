@@ -9,14 +9,14 @@ namespace Bouncer.SystemWeb
 {
     public class MikeModule : IHttpModule
     {
-        private static Mike _bouncer;
+        private static MikeIds _bouncer;
 
         static MikeModule()
         {
-            _bouncer = new Mike();
+            _bouncer = new MikeIds();
         }
 
-        public static Mike BouncerManager
+        public static MikeIds BouncerManager
         {
             get { return _bouncer; }
             set { _bouncer = value; }
