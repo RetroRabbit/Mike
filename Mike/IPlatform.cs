@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Bouncer
+namespace Mike
 {
     public interface IPlatform
     {

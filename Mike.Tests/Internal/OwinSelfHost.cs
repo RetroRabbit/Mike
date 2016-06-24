@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bouncer.Tests.Internal
+namespace Mike.Tests.Internal
 {
     using System.Threading;
     using AppFunc = Func<IOwinContext, Func<Task>, Task>;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Linq;
 
-namespace Bouncer.SystemWeb
+namespace Mike.SystemWeb
 {
     internal class SystemWebRequest : IRequestContext
     {

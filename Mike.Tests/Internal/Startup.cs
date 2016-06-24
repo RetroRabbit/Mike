@@ -5,7 +5,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace Bouncer.Tests.Internal
+namespace Mike.Tests.Internal
 {
     using AppFunc = Func<IOwinContext, Func<Task>, Task>;
     internal class Startup

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Linq;
 
-namespace Bouncer.SystemWeb
+namespace Mike.SystemWeb
 {
     internal class SystemWebPlatform : IPlatform
     {

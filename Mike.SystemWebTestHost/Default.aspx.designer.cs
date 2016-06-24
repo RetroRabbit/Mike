@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bouncer.SystemWebTestHost {
+namespace Mike.SystemWebTestHost {
     
     
     public partial class Default {

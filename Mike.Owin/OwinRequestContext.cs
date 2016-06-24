@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bouncer.Owin
+namespace Mike.Owin
 {
     public class OwinRequestContext : IRequestContext
     {

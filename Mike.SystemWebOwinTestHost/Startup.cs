@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(Bouncer.SystemWebOwinTestHost.Startup))]
+[assembly: OwinStartup(typeof(Mike.SystemWebOwinTestHost.Startup))]
 
-namespace Bouncer.SystemWebOwinTestHost
+namespace Mike.SystemWebOwinTestHost
 {
     public class Startup
     {

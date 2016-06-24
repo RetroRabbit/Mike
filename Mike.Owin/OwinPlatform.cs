@@ -4,7 +4,7 @@ using System.Collections.Specialized;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Bouncer.Owin
+namespace Mike.Owin
 {
     internal class OwinPlatform : IPlatform
     {
