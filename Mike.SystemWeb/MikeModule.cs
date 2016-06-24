@@ -7,16 +7,16 @@ using System.Web;
 
 namespace Bouncer.SystemWeb
 {
-    public class BouncerModule : IHttpModule
+    public class MikeModule : IHttpModule
     {
-        private static BouncerManager _bouncer;
+        private static Mike _bouncer;
 
-        static BouncerModule()
+        static MikeModule()
         {
-            _bouncer = new BouncerManager();
+            _bouncer = new Mike();
         }
 
-        public static BouncerManager BouncerManager
+        public static Mike BouncerManager
         {
             get { return _bouncer; }
             set { _bouncer = value; }

@@ -8,7 +8,7 @@ namespace Bouncer
 {
     public class Report
     {
-        public BouncerConfiguration Configuration { get; set; }
+        public MikeConfiguration Configuration { get; set; }
         public bool RemoteAddressRewriteAdvised { get; set; }
         public bool IntrusionDetected { get; set; }
         public double RequestRate { get; set; }

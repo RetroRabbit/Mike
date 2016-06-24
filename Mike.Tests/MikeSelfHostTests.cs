@@ -9,9 +9,9 @@ using Xunit;
 
 namespace Bouncer.Tests
 {
-    public class BouncerSelfHostTests
+    public class MikeSelfHostTests
     {
-        public BouncerSelfHostTests()
+        public MikeSelfHostTests()
         {
         }
 

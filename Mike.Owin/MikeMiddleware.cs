@@ -8,12 +8,12 @@ namespace Bouncer.Owin
 {
     using AppFunc = Func<IDictionary<string, object>, Task>;
 
-    internal class BouncerMiddleware
+    internal class MikeMiddleware
     {
-        private BouncerManager _bouncer;
+        private Mike _bouncer;
         private Func<IDictionary<string, object>, Task> _next;
 
-        public BouncerMiddleware(AppFunc next, BouncerManager bouncer)
+        public MikeMiddleware(AppFunc next, Mike bouncer)
         {
             _bouncer = bouncer;
             _next = next;

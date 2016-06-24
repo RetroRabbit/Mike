@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Bouncer
 {
-    public class BouncerManager
+    public class Mike
     {
-        public BouncerConfiguration Configuration { get; set; }
+        public MikeConfiguration Configuration { get; set; }
 
-        public BouncerManager()
-            : this(new BouncerConfiguration())
+        public Mike()
+            : this(new MikeConfiguration())
         {
         }
 
-        public BouncerManager(BouncerConfiguration configuration)
+        public Mike(MikeConfiguration configuration)
         {
             Configuration = configuration;
         }

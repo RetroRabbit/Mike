@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BouncerManager.cs" />
-    <Compile Include="BouncerConfiguration.cs" />
+    <Compile Include="Mike.cs" />
+    <Compile Include="MikeConfiguration.cs" />
     <Compile Include="HelperExtensions.cs" />
     <Compile Include="IntrusionAction.cs" />
     <Compile Include="IPlatform.cs" />

@@ -79,7 +79,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BouncerSelfHostTests.cs" />
+    <Compile Include="MikeSelfHostTests.cs" />
     <Compile Include="Internal\OwinSelfHost.cs" />
     <Compile Include="Internal\Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

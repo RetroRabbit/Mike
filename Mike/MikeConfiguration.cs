@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bouncer
 {
-    public class BouncerConfiguration
+    public class MikeConfiguration
     {
         /// <summary>
         /// When set to <c>true</c> the remote address will not
