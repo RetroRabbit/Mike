@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bouncer", "Bouncer\Bouncer.csproj", "{FED185BE-32CF-4CB9-BDC6-30D8900B734C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mike", "Mike\Mike.csproj", "{FED185BE-32CF-4CB9-BDC6-30D8900B734C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bouncer.Tests", "Bouncer.Tests\Bouncer.Tests.csproj", "{1F875090-AE6E-462A-916A-3BC64D0F2650}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mike.Tests", "Mike.Tests\Mike.Tests.csproj", "{1F875090-AE6E-462A-916A-3BC64D0F2650}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bouncer.SystemWebTestHost", "Bouncer.SystemWebTestHost\Bouncer.SystemWebTestHost.csproj", "{68E4AB6E-7FD5-484E-8DF4-FB8E0DC770BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mike.SystemWebTestHost", "Mike.SystemWebTestHost\Mike.SystemWebTestHost.csproj", "{68E4AB6E-7FD5-484E-8DF4-FB8E0DC770BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bouncer.SystemWeb", "Bouncer.SystemWeb\Bouncer.SystemWeb.csproj", "{D54D16B0-1780-4789-A4DF-73F6ADD86943}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mike.SystemWeb", "Mike.SystemWeb\Mike.SystemWeb.csproj", "{D54D16B0-1780-4789-A4DF-73F6ADD86943}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bouncer.Owin", "Bouncer.Owin\Bouncer.Owin.csproj", "{73051C62-0E82-471F-93CD-34657CD4168E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mike.Owin", "Mike.Owin\Mike.Owin.csproj", "{73051C62-0E82-471F-93CD-34657CD4168E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bouncer.SystemWebOwinTestHost", "Bouncer.SystemWebOwinTestHost\Bouncer.SystemWebOwinTestHost.csproj", "{507704E2-5191-4E72-A0FD-6DCF9EE28D2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mike.SystemWebOwinTestHost", "Mike.SystemWebOwinTestHost\Mike.SystemWebOwinTestHost.csproj", "{507704E2-5191-4E72-A0FD-6DCF9EE28D2B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{351AC0CF-EA75-4487-AC48-BD59FB447CA1}"
 	ProjectSection(SolutionItems) = preProject
