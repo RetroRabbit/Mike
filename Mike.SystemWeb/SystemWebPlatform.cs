@@ -29,7 +29,7 @@ namespace Mike.SystemWeb
             foreach (var header in newResponse.Headers) response.Headers.Add(header.Key, header.Value);
             response.StatusCode = newResponse.StatusCode;
             response.Status = newResponse.ReasonPhrase;
-            await newResponse.ResponseBody.CopyToAsync(response.OutputStream, 1024, cancellationToken);
+            await newResponse.WriteResponse(response.OutputStream, cancellationToken);
         }
     }
 }

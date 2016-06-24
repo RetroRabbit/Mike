@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mike
 {
@@ -9,6 +11,6 @@ namespace Mike
         IEnumerable<KeyValuePair<string,string>> Headers { get; }
         int StatusCode { get; }
         string ReasonPhrase { get; }
-        Stream ResponseBody { get; }
+        Task WriteResponse(Stream writeTo, CancellationToken cancellationToken);
     }
 }
