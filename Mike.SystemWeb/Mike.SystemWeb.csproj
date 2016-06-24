@@ -47,7 +47,7 @@
     <Compile Include="SystemWebRequest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bouncer\Bouncer.csproj">
+    <ProjectReference Include="..\Mike\Mike.csproj">
       <Project>{fed185be-32cf-4cb9-bdc6-30d8900b734c}</Project>
       <Name>Bouncer</Name>
     </ProjectReference>

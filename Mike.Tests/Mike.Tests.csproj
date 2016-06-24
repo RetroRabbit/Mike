@@ -88,23 +88,23 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bouncer.Owin\Bouncer.Owin.csproj">
+    <ProjectReference Include="..\Mike.Owin\Mike.Owin.csproj">
       <Project>{73051c62-0e82-471f-93cd-34657cd4168e}</Project>
       <Name>Bouncer.Owin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bouncer.SystemWebOwinTestHost\Bouncer.SystemWebOwinTestHost.csproj">
+    <ProjectReference Include="..\Mike.SystemWebOwinTestHost\Mike.SystemWebOwinTestHost.csproj">
       <Project>{507704e2-5191-4e72-a0fd-6dcf9ee28d2b}</Project>
       <Name>Bouncer.SystemWebOwinTestHost</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bouncer.SystemWebTestHost\Bouncer.SystemWebTestHost.csproj">
+    <ProjectReference Include="..\Mike.SystemWebTestHost\Mike.SystemWebTestHost.csproj">
       <Project>{68e4ab6e-7fd5-484e-8df4-fb8e0dc770ba}</Project>
       <Name>Bouncer.SystemWebTestHost</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bouncer.SystemWeb\Bouncer.SystemWeb.csproj">
+    <ProjectReference Include="..\Mike.SystemWeb\Mike.SystemWeb.csproj">
       <Project>{d54d16b0-1780-4789-a4df-73f6add86943}</Project>
       <Name>Bouncer.SystemWeb</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bouncer\Bouncer.csproj">
+    <ProjectReference Include="..\Mike\Mike.csproj">
       <Project>{fed185be-32cf-4cb9-bdc6-30d8900b734c}</Project>
       <Name>Bouncer</Name>
     </ProjectReference>

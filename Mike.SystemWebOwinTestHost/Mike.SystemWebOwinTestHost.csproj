@@ -102,11 +102,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bouncer.Owin\Bouncer.Owin.csproj">
+    <ProjectReference Include="..\Mike.Owin\Mike.Owin.csproj">
       <Project>{73051c62-0e82-471f-93cd-34657cd4168e}</Project>
       <Name>Bouncer.Owin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bouncer\Bouncer.csproj">
+    <ProjectReference Include="..\Mike\Mike.csproj">
       <Project>{fed185be-32cf-4cb9-bdc6-30d8900b734c}</Project>
       <Name>Bouncer</Name>
     </ProjectReference>
