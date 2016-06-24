@@ -7,8 +7,8 @@
     <ProjectGuid>{FED185BE-32CF-4CB9-BDC6-30D8900B734C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bouncer</RootNamespace>
-    <AssemblyName>Bouncer</AssemblyName>
+    <RootNamespace>Mike</RootNamespace>
+    <AssemblyName>Mike</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

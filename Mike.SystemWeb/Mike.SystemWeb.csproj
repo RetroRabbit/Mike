@@ -7,8 +7,8 @@
     <ProjectGuid>{D54D16B0-1780-4789-A4DF-73F6ADD86943}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bouncer.SystemWeb</RootNamespace>
-    <AssemblyName>Bouncer.SystemWeb</AssemblyName>
+    <RootNamespace>Mike.SystemWeb</RootNamespace>
+    <AssemblyName>Mike.SystemWeb</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

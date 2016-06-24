@@ -7,8 +7,8 @@
     <ProjectGuid>{73051C62-0E82-471F-93CD-34657CD4168E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bouncer.Owin</RootNamespace>
-    <AssemblyName>Bouncer.Owin</AssemblyName>
+    <RootNamespace>Mike.Owin</RootNamespace>
+    <AssemblyName>Mike.Owin</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -8,8 +8,8 @@
     <ProjectGuid>{1F875090-AE6E-462A-916A-3BC64D0F2650}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bouncer.Tests</RootNamespace>
-    <AssemblyName>Bouncer.Tests</AssemblyName>
+    <RootNamespace>Mike.Tests</RootNamespace>
+    <AssemblyName>Mike.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
